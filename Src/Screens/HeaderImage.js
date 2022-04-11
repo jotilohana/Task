@@ -25,17 +25,17 @@ const styles=StyleSheet.create({
         flexDirection:'row',
     },
     profilePicture:{
-        height:50,
+        height:40,
         borderRadius:50,
-        width:50,
+        width:40,
         marginTop:10
     },
     text:{
         fontWeight:'bold',
-        marginTop:25,
+        marginTop:20,
         color:'black',
         marginLeft:10,
-        fontSize:18
+        fontSize:20
     }
 })
 
