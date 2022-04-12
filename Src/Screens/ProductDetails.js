@@ -4,20 +4,20 @@ import {FlatList} from 'react-native-gesture-handler';
 
 const ProductDetails = ({route}) => {
   const [apiData, setData] = useState([]);
-  const [k, setK] = useState([]);
   const {itemId} = route.params;
     console.log(itemId)
+  const data = apiData.filter((e) => e.MacAddress== itemId)
+
 
   useEffect(() => {
     fetch('https://veramobile.mios.com/test_android/items.test')
       .then(response => response.json())
-      .then(json => setData(json.Devices/{itemId}))
+      .then(json => setData(json.Devices))
       .catch(error => console.error(error));
       console.log(apiData)
     }, []);
   
     const Details = ({item}) => {
-        // console.log(apiData)
         return (
       <View style={{backgroundColor: 'white', borderRadius: 25, margin:20, padding:20}}>
         <Text>{item.PK_Device}</Text>
@@ -37,7 +37,7 @@ const ProductDetails = ({route}) => {
   return (
     <View style={{flex: 1}}>
       <FlatList
-        data={apiData}
+        data={data}
         renderItem={Details}
         keyExtractor={(item => item.id)}
       />
