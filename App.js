@@ -1,12 +1,12 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
 import AuthStack from './Navigation/AuthStack';
-
+import {Provider} from 'react-redux';
+import Store from './Store';
 const App = () => {
   return (
-    <SafeAreaView style={{flex:1}}>
+    <Provider store={Store}>
       <AuthStack />
-    </SafeAreaView>
+    </Provider>
   );
 };
 

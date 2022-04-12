@@ -5,7 +5,6 @@ import {FlatList} from 'react-native-gesture-handler';
 const ProductDetails = ({route}) => {
   const [apiData, setData] = useState([]);
   const {itemId} = route.params;
-    console.log(itemId)
   const data = apiData.filter((e) => e.MacAddress== itemId)
 
 

@@ -4,11 +4,12 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HeaderImage from '../Src/Screens/HeaderImage';
 import ProductDetails from '../Src/Screens/ProductDetails';
+import EditDetails from '../Src/Screens/EditHeader';
 const Stack = createStackNavigator();
-export default function AuthStack() {
+export default function AuthStack({route}) {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='HomeScreen'>
         <Stack.Screen
           options={({route}) => ({
             title: <HeaderImage />,
@@ -23,7 +24,7 @@ export default function AuthStack() {
           name="Product Details"
           component={ProductDetails}
         />
-        {/* <Stack.Screen name="RenderData" component={RenderData} /> */}
+        <Stack.Screen name="Edit Details" component={EditDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
